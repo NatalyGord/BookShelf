@@ -1,7 +1,6 @@
 package com.example.bookshelf.services;
 
 import com.example.bookshelf.models.Autor;
-import com.example.bookshelf.models.Book;
 import com.example.bookshelf.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

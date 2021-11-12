@@ -29,10 +29,10 @@ public class BookController {
     public List<Book> findByAvailability(){
         return bookService.findByAvailability(true);
     }
-//    @GetMapping("/books/{autorId)")   //получить все книги одного автора
-//    public List getAllBooksByAutorId(Long autorId){
-//        return bookService.getBookByAutorId(autorId);
-//    }
+    @GetMapping("/books/false")   //получить все книги отсутствующие
+    public List<Book> findByAvailability2(){
+        return bookService.findByAvailability(false);
+    }
 
     @GetMapping("/books/{bookId}")   //Получить книгу по ID
     public Book getBookById(@PathVariable(value = "bookId") Long bookId){

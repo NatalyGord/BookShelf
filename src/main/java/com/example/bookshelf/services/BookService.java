@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BookService {
@@ -25,11 +23,8 @@ public class BookService {
     public Book getBookById(Long bookId){      //Получить книгу по ID
         return bookRepository.findById(bookId).orElse(null);
     }
-    public List<Book> findByAvailability(Boolean availability){
+    public List<Book> findByAvailability(Boolean availability){  //получить книги по наличию на полке
         return bookRepository.findByAvailability(availability);
-    }
-    public List<Book> getBookByAutorId(Long autorId){   //получить книги по автору
-        return bookRepository.findAllById(Collections.singleton(autorId));
     }
 
     public Book createBook(Book book){      //Создать книгу
