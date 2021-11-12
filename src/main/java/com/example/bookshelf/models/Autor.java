@@ -7,30 +7,45 @@ import java.util.Date;
 @Table(name = "autors")
 public class Autor {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "autorId")
     private Long autorId;
 
-    @Column
+    @Column(name = "surnameAutor", nullable = false)
     private String surnameAutor;
 
-    @Column
+    @Column(name = "nameAutor", nullable = false)
     private String nameAutor;
 
-    @Column
+    @Column(name = "patronymicautor")
     private String patronymicautor;
 
-    @Column
+    @Column(name = "dateOfBirth", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
-    @Column
+    @Column(name = "biography", nullable = false)
     private String biography;
+
+    public Autor(){
+    }
+    public Autor(String surnameAutor, String nameAutor, String patronymicautor, Date dateOfBirth, String biography) {
+        this.surnameAutor = surnameAutor;
+        this.nameAutor = nameAutor;
+        this.patronymicautor = patronymicautor;
+        this.dateOfBirth = dateOfBirth;
+        this.biography = biography;
+    }
+    public Autor(String surnameAutor, String nameAutor, Date dateOfBirth, String biography) {
+        this.surnameAutor = surnameAutor;
+        this.nameAutor = nameAutor;
+        this.dateOfBirth = dateOfBirth;
+        this.biography = biography;
+        this.patronymicautor = null;
+    }
 
     public Long getAutorId() {
         return autorId;
-    }
-
-    public void setAutorId(Long autorId) {
-        this.autorId = autorId;
     }
 
     public String getSurnameAutor() {
@@ -71,5 +86,17 @@ public class Autor {
 
     public void setBiography(String biography) {
         this.biography = biography;
+    }
+
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "autorId=" + autorId +
+                ", surnameAutor='" + surnameAutor + '\'' +
+                ", nameAutor='" + nameAutor + '\'' +
+                ", patronymicautor='" + patronymicautor + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", biography='" + biography + '\'' +
+                '}';
     }
 }

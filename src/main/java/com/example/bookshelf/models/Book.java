@@ -7,28 +7,38 @@ import javax.persistence.*;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "bookId")
     private Long bookId;
 
-    @Column
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column
+    @Column(name = "indexNumber", nullable = false)
     private Integer indexNumber;
 
-    @Column
+    @Column(name = "availability", nullable = false)
     private Boolean availability;
 
-    @Column
+//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @Column(nullable = false)
+    @JoinColumn(name = "autorId")     //внешний ключ
     private Long autorId;
+
+    public Book(){
+    }
+    public Book(String title, Integer indexNumber, Boolean availability, Long autorId) {
+        this.title = title;
+        this.indexNumber = indexNumber;
+        this.availability = availability;
+        this.autorId = autorId;
+
+    }
 
     public Long getBookId() {
         return bookId;
     }
 
-    public void setBookId(Long bookId) {
-        this.bookId = bookId;
-    }
 
     public String getTitle() {
         return title;
@@ -61,4 +71,16 @@ public class Book {
     public void setAutorId(Long autorId) {
         this.autorId = autorId;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", title='" + title + '\'' +
+                ", indexNumber=" + indexNumber +
+                ", availability=" + availability +
+                ", autorID=" + autorId +
+                '}';
+    }
+
 }

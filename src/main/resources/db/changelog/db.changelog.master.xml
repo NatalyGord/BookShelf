@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+<!--    <changeSet id="1" author="Nata">-->
+<!--        <createTable tableName="books">-->
+<!--            <column name="bookId" type="BIGSERIAL">-->
+<!--                <constraints primaryKey="true" nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="title" type="text">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="indexNumber" type="integer">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="availability" type="Boolean">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="autorId" type="BIGSERIAL">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+
+<!--        </createTable>-->
+<!--    </changeSet>-->
+
+<!--    <changeSet id="2" author="Nata">-->
+<!--        <createTable tableName="autors">-->
+<!--            <column name="autorId" type="BIGSERIAL">-->
+<!--                <constraints primaryKey="true" nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="surnameAutor" type="text">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="nameAutor" type="text">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="patronymicautor" type="text">-->
+
+<!--            </column>-->
+<!--            <column name="dateOfBirth" type="Date">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--            <column name="biography" type="text">-->
+<!--                <constraints nullable="false"/>-->
+<!--            </column>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+
+<!--    <changeSet id="3" author="Nata">-->
+<!--        <addForeignKeyConstraint baseColumnNames="autorId"-->
+<!--                                 baseTableName="books"-->
+<!--                                 constraintName="fk_books_autorId"-->
+<!--                                 referencedColumnNames="autorId"-->
+<!--                                 referencedTableName="autors"/>-->
+<!--    </changeSet>-->
+<!--    <changeSet id="1" author="Nata">-->
+<!--        <addForeignKeyConstraint baseColumnNames="autor_id"-->
+<!--                                 baseTableName="books"-->
+<!--                                 constraintName="fk_books_autorId"-->
+<!--                                 referencedColumnNames="autor_id"-->
+<!--                                 referencedTableName="autors"/>-->
+<!--    </changeSet>-->
+
+</databaseChangeLog>
