@@ -48,4 +48,18 @@ public class BookService {
         bookRepository.delete(book);
         return ResponseEntity.ok().build();
     }
+
+    public List<Book> sortAll_ASC() {  //сортировка таблицы books по возрастанию столбец title
+        return bookRepository.sortAll_ASC();
+    }
+    public List<Book> sortAll_DESC() {  //сортировка таблицы books по убыванию столбец title
+        return bookRepository.sortAll_DESC();
+    }
+
+    public List<Book> sortAll_numASC() {  //сортировка таблицы books по возрастанию столбец indexNumber
+        return bookRepository.sortAll_numASC();
+    }
+    public List<Book> sortAll_numDESC() {  //сортировка таблицы books по убыванию столбец indexNumber
+        return bookRepository.sortAll_numDESC();
+    }
 }

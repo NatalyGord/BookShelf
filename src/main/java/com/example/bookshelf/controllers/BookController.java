@@ -25,6 +25,25 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
+    @GetMapping("/books/sort/ASC")   //сортировка таблицы books по возрастанию столбец title
+    public List<Book> getAllBooksSortAll_ASC(){
+        return bookService.sortAll_ASC();
+    }
+    @GetMapping("/books/sort/DESC")   //сортировка таблицы books по убыванию столбец title
+    public List<Book> getAllBooksSortAll_DESC(){
+        return bookService.sortAll_DESC();
+    }
+
+    @GetMapping("/books/sort/numASC")   //сортировка таблицы books по возрастанию столбец indexNumber
+    public List<Book> getAllBooksSortAll_numASC(){
+        return bookService.sortAll_numASC();
+    }
+    @GetMapping("/books/sort/numDESC")   //сортировка таблицы books по убыванию столбец indexNumber
+    public List<Book> getAllBooksSortAll_numDESC(){
+        return bookService.sortAll_numDESC();
+    }
+
+
     @GetMapping("/books/true")   //получить все книги доступные
     public List<Book> findByAvailability(){
         return bookService.findByAvailability(true);
