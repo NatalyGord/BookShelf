@@ -1,6 +1,7 @@
 package com.example.bookshelf.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "books")
@@ -20,19 +21,18 @@ public class Book {
     @Column(name = "availability", nullable = false)
     private Boolean availability;
 
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @Column(nullable = false)
+    @NotNull
+    @ManyToOne
     @JoinColumn(name = "autorId")     //внешний ключ
-    private Long autorId;
+    private Autor autor;
 
     public Book(){
     }
-    public Book(String title, Integer indexNumber, Boolean availability, Long autorId) {
+    public Book(String title, Integer indexNumber, Boolean availability, Autor autor) {
         this.title = title;
         this.indexNumber = indexNumber;
         this.availability = availability;
-        this.autorId = autorId;
-
+        this.autor = autor;
     }
 
     public Long getBookId() {
@@ -64,12 +64,11 @@ public class Book {
         this.availability = availability;
     }
 
-    public Long getAutorId() {
-        return autorId;
+    public Autor getAutor() {
+        return autor;
     }
-
-    public void setAutorId(Long autorId) {
-        this.autorId = autorId;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     @Override
@@ -79,7 +78,7 @@ public class Book {
                 ", title='" + title + '\'' +
                 ", indexNumber=" + indexNumber +
                 ", availability=" + availability +
-                ", autorID=" + autorId +
+                ", autorID=" + autor.getAutorId() +
                 '}';
     }
 

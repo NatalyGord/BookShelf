@@ -16,31 +16,34 @@ public class BookService {
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
-    public List<Book> getAllBooks(){  //получить все книги
+
+    public List<Book> getAllBooks() {  //получить все книги
         return bookRepository.findAll();
     }
 
-    public Book getBookById(Long bookId){      //Получить книгу по ID
+    public Book getBookById(Long bookId) {      //Получить книгу по ID
         return bookRepository.findById(bookId).orElse(null);
     }
-    public List<Book> findByAvailability(Boolean availability){  //получить книги по наличию на полке
+
+    public List<Book> findByAvailability(Boolean availability) {  //получить книги по наличию на полке
         return bookRepository.findByAvailability(availability);
     }
 
-    public Book createBook(Book book){      //Создать книгу
+    public Book createBook(Book book) {      //Создать книгу
         return bookRepository.save(book);
     }
 
-    public Book updateBook(Long bookId, Book bookNew){   //редактировать книгу
+    public Book updateBook(Long bookId, Book bookNew) {   //редактировать книгу
         Book book = bookRepository.getById(bookId);
         book.setTitle(bookNew.getTitle());
-        book.setAutorId(bookNew.getAutorId());
+        book.setAutor(bookNew.getAutor());
         book.setIndexNumber(bookNew.getIndexNumber());
         book.setAvailability(bookNew.getAvailability());
 
         return bookRepository.save(book);
     }
-    public ResponseEntity deleteBook(Long bookId){   //удалить книгу
+
+    public ResponseEntity deleteBook(Long bookId) {   //удалить книгу
         Book book = bookRepository.getById(bookId);
         bookRepository.delete(book);
         return ResponseEntity.ok().build();

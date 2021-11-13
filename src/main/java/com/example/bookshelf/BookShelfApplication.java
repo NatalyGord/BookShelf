@@ -30,7 +30,8 @@ public class BookShelfApplication {
 //    @EventListener(ApplicationReadyEvent.class)
 //    private void testJpaMethods(){
 //        Autor autor = new Autor();
-//        Date date = new Date(1809-04-01);
+//        Date date = new Date(-5_072_887_352L*1000);
+//
 //        autor.setNameAutor("Николай");
 //        autor.setSurnameAutor("Гоголь");
 //        autor.setPatronymicautor("Васильевич");
@@ -41,10 +42,10 @@ public class BookShelfApplication {
 //        book.setTitle("Мертвые души");
 //        book.setIndexNumber(105);
 //        book.setAvailability(true);
-//        book.setAutorId(1L);
+//        book.setAutor(autor);
 //
 //        Autor autor1 = new Autor();
-//        Date date1 = new Date(1799-05-26);
+//        Date date1 = new Date(-5383668152L*1000);
 //        autor1.setNameAutor("Александр");
 //        autor1.setSurnameAutor("Пушкин");
 //        autor1.setPatronymicautor("Сергеевич");
@@ -55,13 +56,13 @@ public class BookShelfApplication {
 //        book1.setTitle("Вечера на хуторе близ Диканьки");
 //        book1.setIndexNumber(455);
 //        book1.setAvailability(true);
-//        book1.setAutorId(1L);
+//        book1.setAutor(autor);
 //
 //        Book book2 = new Book();
 //        book2.setTitle("Руслан и Людмила");
 //        book2.setIndexNumber(608);
 //        book2.setAvailability(false);
-//        book2.setAutorId(2L);
+//        book2.setAutor(autor1);
 //
 //        autorServ.createAutor(autor);
 //        autorServ.createAutor(autor1);
