@@ -43,6 +43,10 @@ public class BookController {
         return bookService.sortAll_numDESC();
     }
 
+    @GetMapping("/books/autor/{autorId}")        //найти все книги по автору
+    public List<Book> findByAutorId(@PathVariable(value = "autorId") Long autorId){
+        return bookService.findByAutorId(autorId);
+    }
 
     @GetMapping("/books/true")   //получить все книги доступные
     public List<Book> findByAvailability(){

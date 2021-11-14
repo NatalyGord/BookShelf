@@ -11,7 +11,9 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Long> {
     List<Book> findByAvailability(boolean availability);
 
-
+    //найти все книги по автору
+    @Query(value = "SELECT * FROM books WHERE autor_id = ?", nativeQuery = true)
+    List<Book> findByAutorId(Long autorId);
 
     //сортировка таблицы books по возрастанию столбец title
     @Query(value = "SELECT * FROM books ORDER BY title ASC", nativeQuery = true)

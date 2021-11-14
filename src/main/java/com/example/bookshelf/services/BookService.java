@@ -62,4 +62,7 @@ public class BookService {
     public List<Book> sortAll_numDESC() {  //сортировка таблицы books по убыванию столбец indexNumber
         return bookRepository.sortAll_numDESC();
     }
+    public List<Book> findByAutorId(Long autorId) {  //найти все книги по автору
+        return bookRepository.findByAutorId(autorId);
+    }
 }
